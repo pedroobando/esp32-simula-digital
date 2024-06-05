@@ -82,6 +82,7 @@ async def main():
 	GPIO32_LED = 32
 	GPIO33_LED = 33
 
+	BAUDRATE = 2400
 
 	TX_GPIO17 = 17
 	RX_GPIO16 = 16
@@ -96,7 +97,7 @@ async def main():
 	ledReady(pl_ready,0)
 	ledReady(pl_writedata,0)
 	lcd = configure_LCD_16x2()
-	uart = configure_uart(tx_pin=TX_GPIO17, rx_pin=RX_GPIO16)  # Ajusta los pines TX y RX según tu configuración
+	uart = configure_uart(tx_pin=TX_GPIO17, rx_pin=RX_GPIO16, baudrate=BAUDRATE)  # Ajusta los pines TX y RX según tu configuración
 	time.sleep(0.5)
 	# await testing_display(lcd)
 	lcdprint(lcd,0,0,"Ready...",True)
